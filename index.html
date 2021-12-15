@@ -5,11 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="pico.min.css">
     <link rel="stylesheet" href="style.css">
-    <title>Hello, world!</title>
+    <title>Generate secure password.</title>
   </head>
   <body>
     <main class="container">
-      <h1>Hello, world!</h1>
+      <h1>Secure password generator</h1>
+      <section>
+        <article>
+          <h2>Options</h2>
+          <label for="letters">Include letters:
+            <input type="checkbox" name="letters" id="letters" checked>
+          </label>
+          <label for="capitals">Include CAPITAL letters:
+            <input type="checkbox" name="capitals" id="capitals" checked>
+          </label>
+          <label for="numbers">Include numbers (0-9):
+            <input type="checkbox" name="numbers" id="numbers" checked>
+          </label>
+          <label for="special">Include special characters:
+            <input type="checkbox" name="special" id="special">
+          </label>
+        </article>
+        <h2>Preferred password length: <output for="passlength" name="selected" id="selected" class="bubble">15</output></h2>
+        <article>
+          <label for="passlength" class="grid container">
+            <h3>8 </h3>
+            <input class="range" type="range" name="passlength" id="passlength" min="8" max="64" value="15" oninput="selected.value = passlength.value">
+            <h3> 64</h3>
+          </label>
+        </article>
+        <button type="submit" data-tooltip="Generate your password">Yes, Rico, KABOOM!</button>
+      </section>
+      <hgroup>
+        <h3>Copy this:</h3>
+        <h4>pmRb!Vfg8tuvkgjATs2*pe</h4>
+      </hgroup>
     </main>
 
     <script src="brains.js"></script>
