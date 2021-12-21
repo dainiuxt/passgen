@@ -12,21 +12,34 @@ const kaboom = document.querySelector("#kaboom");
 const result = document.querySelector(".result");
 
 const assortment = {
-  letters: letters,
+  letters: letters
 };
 
 let passwordLength = 15;
 
 function generatePassword() {
-  const symbols = Object.values(assortment);
-  const myset = [].concat.apply([], symbols);
+  let symbols = Object.values(assortment);
+  if (symbols.length === 0) {
+    symbols = [letters];
+  }
   let password = "";
-  for (i = 0; i < passwordLength; i++) {
-    let mychar = Math.floor(Math.random() * myset.length);
-    password += myset[mychar];
+  
+  for (i = 0; i < symbols.length; i++) {
+    let rand1 = i;
+    let collection = symbols[rand1];
+    let rand2 = Math.floor(Math.random() * collection.length);
+    let mychar = collection[rand2];
+    password += mychar;
+  }
+  for (i = symbols.length; i < passwordLength; i++) {
+    let rand1 = Math.floor(Math.random() * symbols.length);
+    let collection = symbols[rand1];
+    let rand2 = Math.floor(Math.random() * collection.length);
+
+    let mychar = collection[rand2];
+    password += mychar;
   }
   result.textContent = password;
-  // console.log(password);
 }
 
 kaboom.addEventListener("click", function() {
@@ -35,7 +48,6 @@ kaboom.addEventListener("click", function() {
 
 checklength.addEventListener('change', function() {
   passwordLength = document.querySelector("input[id=passlength]").value;
-  console.log(passwordLength);
 });
 
 checkletters.addEventListener("change", function() {
