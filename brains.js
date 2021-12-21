@@ -10,6 +10,8 @@ const checkspecial = document.querySelector("input[id=special]");
 const checklength = document.querySelector("input[id=passlength]");
 const kaboom = document.querySelector("#kaboom");
 const result = document.querySelector("#result");
+const modal = document.querySelector(".modal");
+const closeModal = document.getElementsByClassName("close")[0];
 let copy = "";
 const assortment = {
   letters: letters
@@ -45,6 +47,11 @@ function generatePassword() {
   range.selectNodeContents(result);
   window.getSelection().addRange(range);
   document.execCommand('copy');
+  modal.style.display = "block";
+}
+
+closeModal.onclick = function() {
+  modal.style.display = "none";
 }
 
 kaboom.addEventListener("click", function() {
