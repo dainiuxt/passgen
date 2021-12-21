@@ -47,20 +47,6 @@ function generatePassword() {
   document.execCommand('copy');
 }
 
-// range.setStart(copy, 0);
-// range.setEnd(copy, copy.length);
-// document.getSelection().addRange(range);
-
-// function copyPassword(){
-//   var copysuccess // var to check whether execCommand successfully executed
-//   try{
-//       copysuccess = document.execCommand("copy") // run command to copy selected text to clipboard
-//   } catch(e){
-//       copysuccess = false
-//   }
-//   return copysuccess
-// }
-
 kaboom.addEventListener("click", function() {
   generatePassword();
 });
