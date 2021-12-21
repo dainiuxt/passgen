@@ -50,6 +50,9 @@ h3 span {
 .options input:checked + span::after {
   content: '[X]';
 }
+hgroup h3 {
+  text-align: center;
+}
 button {
   margin-top: 2rem;
   display: block;

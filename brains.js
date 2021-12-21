@@ -9,8 +9,8 @@ const checknumbers = document.querySelector("input[id=numbers]");
 const checkspecial = document.querySelector("input[id=special]");
 const checklength = document.querySelector("input[id=passlength]");
 const kaboom = document.querySelector("#kaboom");
-const result = document.querySelector(".result");
-
+const result = document.querySelector("#result");
+let copy = "";
 const assortment = {
   letters: letters
 };
@@ -35,12 +35,31 @@ function generatePassword() {
     let rand1 = Math.floor(Math.random() * symbols.length);
     let collection = symbols[rand1];
     let rand2 = Math.floor(Math.random() * collection.length);
-
     let mychar = collection[rand2];
     password += mychar;
   }
   result.textContent = password;
+  copy = result.textContent;
+
+  let range = new Range();
+  range.selectNodeContents(result);
+  window.getSelection().addRange(range);
+  document.execCommand('copy');
 }
+
+// range.setStart(copy, 0);
+// range.setEnd(copy, copy.length);
+// document.getSelection().addRange(range);
+
+// function copyPassword(){
+//   var copysuccess // var to check whether execCommand successfully executed
+//   try{
+//       copysuccess = document.execCommand("copy") // run command to copy selected text to clipboard
+//   } catch(e){
+//       copysuccess = false
+//   }
+//   return copysuccess
+// }
 
 kaboom.addEventListener("click", function() {
   generatePassword();
