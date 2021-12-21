@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
     <title>Generate secure password.</title>
   </head>
@@ -34,7 +35,7 @@
         <h2>Preferred password length: <output for="passlength" name="selected" id="selected" class="bubble">15</output></h2>
         <article>
           <label for="passlength">
-            <h3>8 <input class="range" type="range" name="passlength" id="passlength" min="8" max="64" value="15" oninput="selected.value = passlength.value"> 64</h3>
+            <h3><span>8</span><input class="range" type="range" name="passlength" id="passlength" min="8" max="64" value="15" oninput="selected.value = passlength.value"><span>64</span></h3>
           </label>
         </article>
         <button id="kaboom" type="submit" data-tooltip="Generate your password">Yes, Rico, KABOOM!</button>
