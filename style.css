@@ -186,6 +186,8 @@ how to remove the virtical space around the range input in IE*/
   /* float: right; */
   font-size: 28px;
   font-weight: bold;
+  border: #4AF626 solid 1px;
+  padding: 0.25rem 0.5rem;
 }
 
 .close:hover,

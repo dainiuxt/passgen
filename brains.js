@@ -17,11 +17,9 @@ const assortment = {
   letters: letters
 };
 
-let range = new Range();
 let passwordLength = 15;
 
 function generatePassword() {
-  window.getSelection().removeAllRanges();
   let symbols = Object.values(assortment);
   if (symbols.length === 0) {
     symbols = [letters];
@@ -43,11 +41,8 @@ function generatePassword() {
     password += mychar;
   }
   result.textContent = password;
-  copy = result.textContent;
 
-  range.selectNodeContents(result);
-  window.getSelection().addRange(range);
-  document.execCommand('copy');
+  navigator.clipboard.writeText(password);
   modal.style.display = "block";
 }
 
